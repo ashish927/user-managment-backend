@@ -1,0 +1,21 @@
+{
+  "name": "user-managment",
+  "version": "1.0.0",
+  "description": "user managment application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ashishrathore27@bitbucket.org/ashishrathore27/user-managment.git"
+  },
+  "author": "Ashish Rathore",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/ashishrathore27/user-managment#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.10"
+  }
+}
