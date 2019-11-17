@@ -4,7 +4,7 @@ const { post, get, put } = require('../controller/user.controller')
  
 const router = express.Router()
  
-router.post('/user', post)
+router.post('', post)
 
 router.get('', get)
 

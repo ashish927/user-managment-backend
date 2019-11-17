@@ -4,9 +4,11 @@ const app = express()
 const routes = require('./route/user.route')
 const db = require('./config/database.properties') 
 const mongoose = require('mongoose')
+var cors = require('cors')
 
 mongoose.connect(db.mongodb.url, {useNewUrlParser: true});
 
+app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
  
