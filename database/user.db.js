@@ -7,6 +7,7 @@ var userDetailsSchema = new Schema({
     name: String,
     email: String,
     role: String,
+    mobileNo: String,
     status: String
 });
 
@@ -18,6 +19,7 @@ const save = async (userInput) => {
             "name": userInput.name,
             "email": userInput.email,
             "role": userInput.role,
+            "mobileNo":userInput.mobileNo,
             "status": userInput.status
         });
 
@@ -46,6 +48,8 @@ const updateOne = async (userInput) => {
       user.email = userInput.email;
       user.status = userInput.status;
       user.role = userInput.role;
+      user.mobileNo = userInput.mobileNo;
+
      let updatedUser = await user.save();
     return await updatedUser
     } catch (e) {
