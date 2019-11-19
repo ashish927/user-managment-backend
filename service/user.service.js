@@ -1,4 +1,4 @@
-const { save, find, updateOne } = require('../database/user.db')
+const { save, find, updateOne, deleteOne } = require('../database/user.db')
  
 const createUser = async (user) => {
   try {
@@ -24,8 +24,16 @@ const updateUser = async (user) => {
   }
 }
  
+const deleteUser = async (id) => {
+  try {
+    return await deleteOne(id)
+  } catch(e) {
+    throw new Error(e.message)
+  }
+}
 module.exports = {
     createUser,
     findUsers,
-    updateUser
+    updateUser,
+    deleteUser
 }

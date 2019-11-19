@@ -1,4 +1,4 @@
-const { createUser, findUsers, updateUser } = require('../service/user.service')
+const { createUser, findUsers, updateUser, deleteUser } = require('../service/user.service')
  
 const post = async (req, res, next) => {  
   try {
@@ -32,9 +32,21 @@ const put = async (req, res, next) => {
     res.sendStatus(500) && next(error)
   }
 }
+
+const deleteCause = async (req, res, next) => {  
+  try {
+    let user = await deleteUser(req.params.userId)
+    res.status(200).json(user)
+    next()
+  } catch(e) {
+    console.log(e.message)
+    res.sendStatus(500) && next(error)
+  }
+}
  
 module.exports = {
     post, 
     get,
-    put
+    put,
+    deleteCause
 }

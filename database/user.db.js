@@ -57,8 +57,19 @@ const updateOne = async (userInput) => {
     }
 }
 
+const deleteOne = async (id) => {
+    try {
+      let users = await UserDetails.findByIdAndDelete(id)  
+    return await users
+    } catch (e) {
+        throw new Error(e.message)
+    }
+}
+
+
 module.exports = {
     save,
     find,
-    updateOne
+    updateOne,
+    deleteOne
 }
